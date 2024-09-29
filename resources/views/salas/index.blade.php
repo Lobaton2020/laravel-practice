@@ -28,6 +28,7 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ url("/salas/$sala->id/edit") }}">Editar</a></li>
+                            <li><a class="dropdown-item" href="{{ url("/salas/$sala->id/detalle") }}">Detalle</a></li>
                             <li>
                                 <form method="POST" action="{{ route('salas.destroy', $sala->id) }}">
                                     @csrf

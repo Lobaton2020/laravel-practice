@@ -18,3 +18,4 @@ Route::get('/',function (){
     return redirect("/salas");
 });
 Route::resource('salas', SalaController::class);
+Route::get('/salas/{id}/detalle', [SalaController::class, 'detalle']);

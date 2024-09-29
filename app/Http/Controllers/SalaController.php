@@ -7,15 +7,15 @@ use Illuminate\Http\Request;
 
 class SalaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $salas = Sala::all();
         return view('salas.index',['salas' => $salas]);
+    }
+
+    public function detalle()
+    {
+        return view('salas.detalle');
     }
 
     /**
