@@ -9,4 +9,8 @@ class Sala extends Model
 {
     use HasFactory;
     protected $fillable = ['nombre'];
+    public function eventos()
+    {
+        return $this->hasMany(Event::class, 'id_sala');
+    }
 }

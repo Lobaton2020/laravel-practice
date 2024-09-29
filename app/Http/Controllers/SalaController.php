@@ -13,11 +13,6 @@ class SalaController extends Controller
         return view('salas.index',['salas' => $salas]);
     }
 
-    public function detalle()
-    {
-        return view('salas.detalle');
-    }
-
     /**
      * Show the form for creating a new resource.
      *

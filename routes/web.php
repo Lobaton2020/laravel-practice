@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\SalaController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,4 +19,4 @@ Route::get('/',function (){
     return redirect("/salas");
 });
 Route::resource('salas', SalaController::class);
-Route::get('/salas/{id}/detalle', [SalaController::class, 'detalle']);
+Route::get('/salas/{id}/eventos', [EventController::class, 'eventos']);

@@ -16,31 +16,31 @@
     @endif
     <div class="row">
         @foreach($salas as $sala)
-        <div class="col-md-4 p-1">
-            <div class="card">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $sala->nombre }}</h5>
-                    </div>
-                    <div class="dropdown mr-1">
-                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="col-md-4 p-1">
+                <div class="card">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $sala->nombre }}</h5>
+                        </div>
+                        <div class="dropdown mr-1">
+                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ url("/salas/$sala->id/edit") }}">Editar</a></li>
-                            <li><a class="dropdown-item" href="{{ url("/salas/$sala->id/detalle") }}">Detalle</a></li>
-                            <li>
-                                <form method="POST" action="{{ route('salas.destroy', $sala->id) }}">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="dropdown-item" type="submit" onclick="return confirm('Estas seguro?')">Eliminar</button>
-                                </form>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{{ url("/salas/$sala->id/edit") }}">Editar</a></li>
+                                <li><a class="dropdown-item" href="{{ url("/salas/$sala->id/eventos") }}">Reservas</a></li>
+                                <li>
+                                    <form method="POST" action="{{ route('salas.destroy', $sala->id) }}">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="dropdown-item" type="submit" onclick="return confirm('Estas seguro?')">Eliminar</button>
+                                    </form>
+                                </li>
+                                </ul>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
         @endforeach
     </div>
     @if($salas->isEmpty())
